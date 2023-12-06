@@ -38,3 +38,20 @@ body{
 .sidebar-filler{
     border-color: rgba(161, 127, 193, 0.3);
 }
+
+#new-animal{
+    background: rgba(161, 127, 193, 0.3);
+}
+
+#new-animal:hover{
+    background: rgba(161, 127, 193, 0.5);
+}
+
+#new-animal:active{
+    background: rgba(161, 127, 193, 0.7);
+    color: white;
+}
+
+.animal-card{
+    background: rgba(161, 127, 193, 0.3)
+}

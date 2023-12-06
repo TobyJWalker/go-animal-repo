@@ -5,4 +5,56 @@
 {% endblock %}
 
 {% block content %}
+
+    <div class="header-container">
+        <div class="header">
+            <h1>Animals</h1>
+        </div>
+        <button id="new-animal">New</button>
+    </div>
+
+    <div class="animal-container">
+
+        <div class="animal-row">
+
+            <button class="animal-card">
+                <div class="animal-card-image">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
+                </div>
+                <div class="animal-card-info">
+                    <h3>Animal Name</h3>
+                </div>
+            </button>
+
+            <button class="animal-card">
+                <div class="animal-card-image">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
+                </div>
+                <div class="animal-card-info">
+                    <h3>Animal Name</h3>
+                </div>
+            </button>
+
+            <button class="animal-card">
+                <div class="animal-card-image">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
+                </div>
+                <div class="animal-card-info">
+                    <h3>Animal Name</h3>
+                </div>
+            </button>
+
+            <button class="animal-card">
+                <div class="animal-card-image">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
+                </div>
+                <div class="animal-card-info">
+                    <h3>Animal Name</h3>
+                </div>
+            </button>
+
+        </div>
+
+    </div>
+
 {% endblock %}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+button{
+    width: 40px;
+    height: 78px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.burger{
+    position: fixed;
+    display: inline;
+    font-size: 32px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 72px;
+}
+
+.navbar{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 24px 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 10px rgba(0, 0, 0, 0.3);
+}
+
+body.menu-open .navbar{
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+}
+
+.logo{
+    display: inline;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.logo a{
+    padding: 32px;
+    text-decoration: none;
+}
+
+.logo h2{
+    display: inline;
+    font-size: 42px;
+    font-weight:600;
+    margin: 0;
+}
+
+#main{
+    transition: margin-left 0.5s;
+    margin-left: 0;
+}
+
+#sidebar{
+    position: fixed;
+    height: 100%;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 82px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-content{
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 10px;
+}
+
+.sidebar-content button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    font-size: 20px;
+    font-weight: 400;
+    border-bottom: 1px solid;
+}
+
+.sidebar-filler{
+    height: 60%;
+    border-bottom: 1px solid;
+}
+
+@media screen and (max-width: 380px) {
+    .logo h2{
+        font-size: 32px;
+    }
+
+    #sidebar{
+        margin-top: 72px;
+    }
+
+    .sidebar-content button{
+        font-size: 14px;
+    }
+}

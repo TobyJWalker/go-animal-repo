@@ -1,10 +1,10 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def index():
-    return 'hello!'
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=3030)

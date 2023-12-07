@@ -41,6 +41,7 @@ body{
 
 #new-animal{
     background: rgba(161, 127, 193, 0.3);
+    color: black;
 }
 
 #new-animal:hover{
@@ -54,4 +55,41 @@ body{
 
 .animal-card{
     background: rgba(161, 127, 193, 0.3)
+}
+
+.animal-card a{
+    color: black;
+}
+
+.new-animal-form{
+    background: white;
+}
+
+.new-animal-form-header button{
+    color: darkgray;
+}
+
+.new-animal-form-content input{
+    background: rgba(161, 127, 193, 0.3);
+}
+
+.new-animal-form-content input:hover{
+    background: rgba(161, 127, 193, 0.5);
+}
+
+.new-animal-form-content input:focus{
+    background: rgba(161, 127, 193, 0.5);
+}
+
+#new-animal-submit{
+    background: rgb(228, 228, 228);
+
+    &:hover{
+        background: rgb(200, 200, 200);
+    }
+
+    &:active{
+        background: rgb(150, 150, 150);
+        color: white;
+    }
 }

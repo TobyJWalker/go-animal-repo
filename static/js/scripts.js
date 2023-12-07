@@ -11,3 +11,13 @@ function toggleSidebar() {
         sidebar_open = true;
     }
 }
+
+function showAnimalForm() {
+    document.getElementById("new-animal-container").style.width = "100%";
+    document.getElementById("add-animal-form").style.height = "50%";
+};
+
+function hideAnimalForm() {
+    document.getElementById("new-animal-container").style.width = "0";
+    document.getElementById("add-animal-form").style.height = "0";
+}

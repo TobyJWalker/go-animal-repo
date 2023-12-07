@@ -10,7 +10,7 @@
         <div class="header">
             <h1>Animals</h1>
         </div>
-        <button id="new-animal">New</button>
+        <button onclick="showAnimalForm()" id="new-animal">New</button>
     </div>
 
     <div class="animal-container">
@@ -18,40 +18,73 @@
         <div class="animal-row">
 
             <button class="animal-card">
+                <a href="#">
                 <div class="animal-card-image">
                     <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
                 </div>
                 <div class="animal-card-info">
                     <h3>Animal Name</h3>
                 </div>
+                </a>
             </button>
 
             <button class="animal-card">
+                <a href="#">
                 <div class="animal-card-image">
                     <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
                 </div>
                 <div class="animal-card-info">
                     <h3>Animal Name</h3>
                 </div>
+                </a>
             </button>
 
             <button class="animal-card">
+                <a href="#">
                 <div class="animal-card-image">
                     <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
                 </div>
                 <div class="animal-card-info">
                     <h3>Animal Name</h3>
                 </div>
+                </a>
             </button>
 
             <button class="animal-card">
+                <a href="#">
                 <div class="animal-card-image">
                     <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
                 </div>
                 <div class="animal-card-info">
                     <h3>Animal Name</h3>
                 </div>
+                </a>
             </button>
+
+        </div>
+
+        <div class="overlay" id="new-animal-container">
+
+            <div class="new-animal-form" id="add-animal-form">
+                <div class="new-animal-form-header">
+                    <h2>New Animal</h2>
+                    <button onclick="hideAnimalForm()" class="material-symbols-outlined">close</button>
+                </div>
+
+                <div class="new-animal-form-content">
+                    <form action="#" method="post">
+                        <label for="name-input">Name</label>
+                        <input type="text" id="name-input" name="animal-name" placeholder="Name" required>
+
+                        <label for="breed-input">Breed</label>
+                        <input type="text" id="breed-input" name="animal-breed" placeholder="Breed" required>
+
+                        <label for="dob-input">Date of Birth</label>
+                        <input type="date" id="dob-input" name="animal-birthdate" placeholder="Date of Birth" required>
+                        <input type="submit" id="new-animal-submit" value="Add Animal">
+                    </form>
+                </div>
+            </div>
 
         </div>
 

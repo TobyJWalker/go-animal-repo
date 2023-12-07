@@ -142,7 +142,7 @@ body.menu-open .navbar{
     text-align: center;
     align-self: center;
     justify-content: center;
-    margin-left: 6.5rem;
+    margin-left: 8.5rem;
 }
 
 #new-animal{
@@ -150,12 +150,13 @@ body.menu-open .navbar{
     flex-direction: row;
     height: 3rem;
     width: 6rem;
-    margin-right: 1rem;
+    margin-right: 3rem;
     align-self: right;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .animal-container{
@@ -177,7 +178,7 @@ body.menu-open .navbar{
 .animal-card{
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 18%;
     height: auto;
     margin: 0 3.5% 3rem;
@@ -249,7 +250,7 @@ body.menu-open .navbar{
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    height: 20%;
+    height: 15%;
     width: 100%;
     padding: 0 1rem;
     border-radius: 2rem 2rem 0 0;

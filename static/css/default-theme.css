@@ -40,7 +40,7 @@ body{
 }
 
 #new-animal{
-    background: rgba(161, 127, 193, 0.3);
+    background: rgba(220, 191, 248, 0.5);
     color: black;
 }
 
@@ -54,7 +54,7 @@ body{
 }
 
 .animal-card{
-    background: rgba(161, 127, 193, 0.3)
+    background: rgba(220, 191, 248, 0.5)
 }
 
 .animal-card a{
@@ -63,6 +63,14 @@ body{
 
 .new-animal-form{
     background: white;
+}
+
+.new-animal-form-header{
+    background: darkslateblue;
+}
+
+.new-animal-form-header h2{
+    color: white
 }
 
 .new-animal-form-header button{

@@ -61,35 +61,35 @@ body{
     color: black;
 }
 
-.new-animal-form{
+.popup-form{
     background: white;
 }
 
-.new-animal-form-header{
+.popup-form-header{
     background: darkslateblue;
 }
 
-.new-animal-form-header h2{
+.popup-form-header h2{
     color: white
 }
 
-.new-animal-form-header button{
+.popup-form-header button{
     color: darkgray;
 }
 
-.new-animal-form-content input{
+.popup-form-content input{
     background: rgba(161, 127, 193, 0.3);
 }
 
-.new-animal-form-content input:hover{
+.popup-form-content input:hover{
     background: rgba(161, 127, 193, 0.5);
 }
 
-.new-animal-form-content input:focus{
+.popup-form-content input:focus{
     background: rgba(161, 127, 193, 0.5);
 }
 
-#new-animal-submit{
+#popup-submit{
     background: rgb(228, 228, 228);
 
     &:hover{
@@ -100,4 +100,79 @@ body{
         background: rgb(150, 150, 150);
         color: white;
     }
+}
+
+#summary-container{
+    background: white;
+}
+
+#info-container{
+    background: rgba(220, 191, 248, 0.5);
+}
+
+#info-header button{
+    color: darkslateblue;
+}
+
+#notes-header button{
+    color: darkslateblue;
+}
+
+#section-right{
+    border-color: rgba(220, 191, 248, 0.5);
+}
+
+#add-note-form{
+    background: rgb(241, 230, 251);
+}
+
+#note-input{
+    background: white;
+}
+
+#note-popup-submit{
+    background: azure;
+
+    &:hover{
+        background: rgb(200, 200, 200);
+    }
+
+    &:active{
+        background: rgb(150, 150, 150);
+        color: white;
+    }
+}
+
+.note{
+    border-color: rgba(220, 191, 248, 0.5);
+    background: white;
+}
+
+#notes-header{
+    background: rgba(220, 191, 248, 0.5);
+}
+
+#notes-container{
+    background: rgba(220, 191, 248, 0.5);
+}
+
+#delete-note-btn{
+    color: red;
+}
+
+#info-section{
+    background: white;
+}
+
+.editable-text{
+    background: rgb(228, 239, 254);
+    border-radius: 5px;
+}
+
+.vertical-separator{
+    background: lightgray;
+}
+
+#info-section-row-2 span p{
+    text-decoration-color: lightblue;
 }

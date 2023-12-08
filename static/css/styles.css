@@ -85,7 +85,6 @@ body.menu-open .navbar{
     overflow-x: hidden;
     transition: 0.5s;
     margin-top: 82px;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-content{
@@ -231,7 +230,7 @@ body.menu-open .navbar{
     justify-content: center;
 }
 
-.new-animal-form{
+.popup-form{
     position: fixed;
     width: 30%;
     min-width: 300px;
@@ -245,7 +244,7 @@ body.menu-open .navbar{
     overflow: hidden;
 }
 
-.new-animal-form-header{
+.popup-form-header{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -256,7 +255,7 @@ body.menu-open .navbar{
     border-radius: 2rem 2rem 0 0;
 }
 
-.new-animal-form-header h2{
+.popup-form-header h2{
     margin: 0 0 0 40px;
     padding: 0;
     background: transparent;
@@ -265,7 +264,7 @@ body.menu-open .navbar{
     text-align: center;
 }
 
-.new-animal-form-header button{
+.popup-form-header button{
     width: 40px;
     height: 40px;
     font-size: 24px;
@@ -275,7 +274,7 @@ body.menu-open .navbar{
     cursor: pointer;
 }
 
-.new-animal-form-content {
+.popup-form-content {
     display: flex;
     flex-flow: column wrap;
     justify-content:center;
@@ -287,7 +286,7 @@ body.menu-open .navbar{
     overflow: hidden;
 }
 
-.new-animal-form-content input{
+.popup-form-content input{
     width: 100%;
     margin-bottom: 1rem;
     height: 2rem;
@@ -302,14 +301,348 @@ body.menu-open .navbar{
     }
 }
 
-.new-animal-form-content label{
+.popup-form-content label{
     display: block;
 }
 
-#new-animal-submit{
+#popup-submit{
     position: relative;
     width: 60%;
     margin-top: 1rem;
     transition: background 0.3s;
-    left: 18%;
+    left: 19%;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 5rem;
+    z-index: 1;
+}
+
+.container{
+    display: inline;
+    justify-content:start;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+
+#summary-container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 30%;
+    padding: 1rem;
+    border-radius: 7px;
+    margin: 0 0.25rem 0.5rem 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    overflow: scroll;
+}
+
+#summary-info{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    line-height: 0.75;
+    padding-left: 1rem;
+}
+
+#summary-info h1{
+    padding: 5px;
+}
+
+#summary-info span{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 20px;
+    align-items: center;
+}
+
+#summary-info span p{
+    margin-top: .5rem;
+    padding: 5px;
+}
+
+#animal-species{
+    font-style: italic;
+    margin-left: 0.5rem;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+#animal-header{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+#summary-image{
+    display: inherit;
+    border-radius: 50%;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+#animal-page-img{
+    width:90%;
+    height:90%;
+    border-radius: 50%;
+}
+
+#info-container{
+    display:flex;
+    flex-direction: column;
+    height: 69%;
+    margin: 0.5rem 0.25rem 0.5rem 0.5rem;
+    border-radius: 7px;
+    overflow: scroll;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    padding: 4px;
+}
+
+#info-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#info-header h2{
+    margin: 0;
+    padding: 1rem 0 1rem 10%;
+    background: transparent;
+    font-weight: 500;
+    width: 90%;
+}
+
+#info-header button{
+    width: 10%;
+    height: 60px;
+    font-size: 32px;
+}
+
+#info-section{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+#notes-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#notes-header h2{
+    margin: 0;
+    padding: 1rem 0 1rem 10%;
+    background: transparent;
+    font-weight: 500;
+    width: 90%;
+}
+
+#notes-header button{
+    width: 10%;
+    height: 60px;
+    font-size: 32px;
+}
+
+#section-right{
+    border-radius: 7px;
+    height: 88vh;
+    margin: 0.5rem 0.25rem 0.5rem 0.25rem;
+    overflow: scroll;
+    border: 4px solid;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+}
+
+#section-left{
+    height: 88vh;
+    margin: 0.5rem 0.25rem 0.5rem 0.25rem;
+}
+
+#note-input{
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#add-note-form{
+    height: 0%;
+    width: 50%;
+    top: 20%;
+    left: 25%;
+}
+
+#add-note-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#note-popup-content{
+    padding: 5% 10% 0 10%;
+}
+
+#note-popup-submit{
+    width: 30%;
+    margin-top: 1rem;
+}
+
+.note-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+}
+
+#notes-container{
+    height: 100%;
+    overflow: scroll;
+}
+
+.note {
+    display: flex;
+    width: 100%;
+    max-height: 30%;
+    overflow: scroll; 
+    padding: 0.5rem;
+    border-radius: 7px;
+    margin-bottom: 0.25rem;
+}
+
+.note-content{
+    width: 92%;
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.note-content h6{
+    margin: 1rem;
+    font-weight: 400;
+}
+
+.note-header{
+    display: flex;
+    flex-direction: row;
+    width: 8%;
+    justify-content: end;
+    align-items: start;
+}
+
+#delete-note-btn{
+    height: 50px;
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+}
+
+#info-section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#info-section-row-1{
+    height: 25%;
+}
+
+#info-section-row-1 span{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#info-section-row-1 span label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#info-section-row-1 span p{
+    margin: 3px;
+    font-size: 18px;
+    padding: 0 6px;
+}
+
+#animal-dob-input{
+    font-size: 16px;
+    display: none;
+    padding: 3px;
+    border: 0;
+}
+
+.vertical-separator{
+    width: 3px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+#info-section-row-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 1rem;
+    height: 65%;
+}
+
+#info-section-row-2 span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+    height: 100%;
+    width: 100%;
+}
+
+#info-section-row-2 span label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#info-section-row-2 span p{
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    line-height: 2rem;
+    text-underline-offset: 6px;
+}
+
+#animal-description-input{
+    display: none;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
 }

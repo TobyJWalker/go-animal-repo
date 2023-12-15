@@ -35,7 +35,7 @@ def index():
 
 @app.route('/quit')
 def quit():
-    os.kill(os.getpid(), signal.SIGINT)
+    os._exit(0)
 
 @app.route('/animals/<int:animal_id>')
 def animal(animal_id):

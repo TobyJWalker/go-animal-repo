@@ -15,53 +15,24 @@
 
     <div class="animal-container">
 
-        <div class="animal-row">
+        {% for row in animals %}
+            <div class="animal-row">
+                
+                {% for animal in row %}
+                    <button class="animal-card">
+                        <a href="/animals/{{ animal.id }}">
+                        <div class="animal-card-image">
+                            <img src="{{ url_for('static', filename=animal.img_url) }}" alt="{{ animal.name }} image">
+                        </div>
+                        <div class="animal-card-info">
+                            <h3>{{ animal.name }}</h3>
+                        </div>
+                        </a>
+                    </button>
+                {% endfor %}
 
-            <button class="animal-card">
-                <a href="#">
-                <div class="animal-card-image">
-                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
-                </div>
-                <div class="animal-card-info">
-                    <h3>Animal Name</h3>
-                </div>
-                </a>
-            </button>
-
-            <button class="animal-card">
-                <a href="#">
-                <div class="animal-card-image">
-                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
-                </div>
-                <div class="animal-card-info">
-                    <h3>Animal Name</h3>
-                </div>
-                </a>
-            </button>
-
-            <button class="animal-card">
-                <a href="#">
-                <div class="animal-card-image">
-                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
-                </div>
-                <div class="animal-card-info">
-                    <h3>Animal Name</h3>
-                </div>
-                </a>
-            </button>
-
-            <button class="animal-card">
-                <a href="#">
-                <div class="animal-card-image">
-                    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" alt="Animal Image">
-                </div>
-                <div class="animal-card-info">
-                    <h3>Animal Name</h3>
-                </div>
-                </a>
-            </button>
-
-        </div>
+            </div>
+        {% endfor %}
 
         <div class="overlay" id="animal-popup-container">
 
@@ -72,7 +43,7 @@
                 </div>
 
                 <div class="popup-form-content">
-                    <form action="#" method="post">
+                    <form action="/animals/add" method="post">
                         <label for="name-input">Name</label>
                         <input type="text" id="name-input" name="animal-name" placeholder="Name" required>
 

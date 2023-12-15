@@ -201,6 +201,8 @@ body.menu-open .navbar{
     width: 100%;
     height: 200%;
     padding: 0;
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 .animal-card-info{
@@ -392,14 +394,17 @@ body.menu-open .navbar{
     display: inherit;
     border-radius: 50%;
     width: 30%;
+    height: 100%;
     align-items: center;
     justify-content: center;
 }
 
 #animal-page-img{
-    width:90%;
-    height:90%;
+    width: 90%;
+    height: auto;
     border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 #info-container{

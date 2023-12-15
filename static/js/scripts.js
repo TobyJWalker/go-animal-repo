@@ -72,6 +72,10 @@ function showInfoForm(animal_id){
     var animal_description_input = document.getElementById("animal-description-input");
     animal_description_val = animal_description_text.textContent;
 
+    var animal_img_box = document.getElementById("animal-page-img");
+    animal_img_box.onclick = promptImageUpload;
+    animal_img_box.style.cursor = "pointer";
+
     animal_name_box.setAttribute("contenteditable", "true");
     animal_name_box.classList.add("editable-text")
 
@@ -112,6 +116,8 @@ function saveInfo(animal_id) {
     var animal_description_input = document.getElementById("animal-description-input");
     var new_description = animal_description_input.value;
 
+    var animal_img_input = document.getElementById("animal-img-input");
+
     if (new_name == "") {
         new_name = animal_name_val;
     }
@@ -144,11 +150,24 @@ function saveInfo(animal_id) {
             species: new_species,
             dob: new_dob,
             group: new_group,
-            description: new_description
+            description: new_description,
         })
     }).then(res => console.log(res));
 
-    location.reload();
+    // send image data
+    if (animal_img_input.files.length > 0) {
+        var upload_url = "/animals/" + animal_id + "/image";
+
+        var img_data = new FormData();
+        img_data.append("file", animal_img_input.files[0]);
+
+        fetch(upload_url, {
+            method: "POST",
+            body: img_data
+        }).then(res => console.log(res));
+    }
+
+    //location.reload();
 }
 
 function deleteNote(note_id) {
@@ -159,4 +178,8 @@ function deleteNote(note_id) {
     fetch(delete_url, {
         method: "DELETE",
     }).then(res => console.log(res));
+}
+
+function promptImageUpload() {
+    document.getElementById("animal-img-input").click();
 }

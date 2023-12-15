@@ -9,7 +9,8 @@
         <div class="container" id="section-left">
             <div id="summary-container">
                 <div id="summary-image">
-                    <img id="animal-page-img" src="{{ url_for('static', filename=animal.img_url) }}" alt="Animal Image">
+                    <img width="200" height="200" id="animal-page-img" src="{{ url_for('static', filename=animal.img_url) }}" alt="Animal Image" >
+                    <input type="file" id="animal-img-input" accept="image/*" style="display: none;">
                 </div>
                 <div class="container" id="summary-info">
                     <h1 id="animal-header">{{ animal.name }}</h1>

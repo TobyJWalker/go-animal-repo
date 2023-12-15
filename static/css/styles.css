@@ -93,6 +93,10 @@ body.menu-open .navbar{
     margin-bottom: 10px;
 }
 
+.sidebar-content a{
+    text-decoration: none;
+}
+
 .sidebar-content button{
     display: flex;
     flex-direction: column;
@@ -169,7 +173,7 @@ body.menu-open .navbar{
 .animal-row{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     width: 100%;
 }

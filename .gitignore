@@ -24,4 +24,4 @@ go.work
 *.sqlite
 
 # uploaded animal images
-static/images/animals/*
+

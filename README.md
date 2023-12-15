@@ -6,12 +6,16 @@ I will be trying to implement some javascript to make the dashboard more dynamic
 ## Stack
 
 - Python
+- Flask
+- Pipenv
 - SQLite
 - HTML/CSS/JS
 
 ## Setup
 
-TBD
+I have included some scripts for different operating systems to make setup easier. Simply run the script for your OS and it will install the required dependencies.
+
+PYTHON 3 IS REQUIRED
 
 ## Backing up data
 

@@ -121,7 +121,8 @@ def add_image(animal_id):
 
     if image != None and allowed_file(image.filename):
         folder_name = animal_id
-        os.mkdir(f'static/{UPLOAD_FOLDER}/{folder_name}')
+        if not os.path.exists(f'static/{UPLOAD_FOLDER}/{folder_name}'):
+            os.mkdir(f'static/{UPLOAD_FOLDER}/{folder_name}')
             
         Thread(target=process_img, args=(image,folder_name,)).start()
         secure_url = f'{UPLOAD_FOLDER}/{folder_name}/{secure_filename(image.filename)}'

@@ -20,7 +20,10 @@ function toggleSidebar() {
 
 function closeApp() {
     fetch("/quit")
-    location.href = "https://www.google.com";
+    // wait a moment
+    setTimeout(function() {
+        location.href = "https://www.google.com";
+    }, 500);
 }
 
 function showAnimalForm() {

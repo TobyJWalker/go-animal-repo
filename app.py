@@ -8,14 +8,20 @@ from PIL import Image
 import base64
 from threading import Thread
 
+# create flask app and db tables
 app = Flask(__name__, static_url_path='/static')
 create_db_tables()
 
 # add markdown support
 app.jinja_env.add_extension(MarkdownExtension)
 
+# upload folder and image extensions
 UPLOAD_FOLDER = 'images/animals'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+# make animals folder if note exists
+if not os.path.exists('static/images/animals'):
+    os.mkdir('static/images/animals')
 
 @app.route('/')
 def index():

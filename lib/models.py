@@ -1,4 +1,9 @@
 import peewee
+import os
+
+# make data folder if not existing
+if not os.path.exists('data'):
+    os.mkdir('data')
 
 db = peewee.SqliteDatabase('data/database.sqlite')
 

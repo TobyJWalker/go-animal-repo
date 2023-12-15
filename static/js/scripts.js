@@ -97,7 +97,7 @@ function showInfoForm(animal_id){
     animal_description_input.classList.add("editable-text")
 }
 
-function saveInfo(animal_id) {
+async function saveInfo(animal_id) {
     var animal_name_box = document.getElementById("animal-header");
     var new_name = animal_name_box.textContent;
     
@@ -161,13 +161,13 @@ function saveInfo(animal_id) {
         var img_data = new FormData();
         img_data.append("file", animal_img_input.files[0]);
 
-        fetch(upload_url, {
+        await fetch(upload_url, {
             method: "POST",
             body: img_data
         }).then(res => console.log(res));
     }
 
-    //location.reload();
+    location.reload();
 }
 
 function deleteNote(note_id) {

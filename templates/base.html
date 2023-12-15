@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default-theme.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <button onclick="toggleSidebar()" class="burger menu-button material-symbols-outlined">menu</button>
+
+        <span class="logo">
+            <a href="/">
+                <h2>Animal Repo</h2>
+            </a>
+        </span>
+
+    </nav>
+
+    <div id="sidebar">
+        <div class="sidebar-content">
+            <a href='/'><button>Animals</button></a>
+            <button>Themes</button>
+            <div class="sidebar-filler"></div>
+            <button>Backup Data</button>
+            <button>Export Data</button>
+            <button onclick="closeApp()">Quit</button>
+        </div>
+    </div>
+
+    <div id="main" class="content">
+            {% block content %}{% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

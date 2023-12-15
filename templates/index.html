@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+
+    <div class="header-container">
+        <div class="header">
+            <h1>Animals</h1>
+        </div>
+        <button onclick="showAnimalForm()" id="new-animal">New</button>
+    </div>
+
+    <div class="animal-container">
+
+        {% for row in animals %}
+            <div class="animal-row">
+                
+                {% for animal in row %}
+                    <button class="animal-card">
+                        <a href="/animals/{{ animal.id }}">
+                        <div class="animal-card-image">
+                            <img src="{{ url_for('static', filename=animal.img_url) }}" alt="{{ animal.name }} image">
+                        </div>
+                        <div class="animal-card-info">
+                            <h3>{{ animal.name }}</h3>
+                        </div>
+                        </a>
+                    </button>
+                {% endfor %}
+
+            </div>
+        {% endfor %}
+
+        <div class="overlay" id="animal-popup-container">
+
+            <div class="popup-form" id="add-animal-form">
+                <div class="popup-form-header">
+                    <h2>New Animal</h2>
+                    <button onclick="hideAnimalForm()" class="material-symbols-outlined">close</button>
+                </div>
+
+                <div class="popup-form-content">
+                    <form action="/animals/add" method="post">
+                        <label for="name-input">Name</label>
+                        <input type="text" id="name-input" name="animal-name" placeholder="Name" required>
+
+                        <label for="breed-input">Breed</label>
+                        <input type="text" id="breed-input" name="animal-breed" placeholder="Breed" required>
+
+                        <label for="dob-input">Date of Birth</label>
+                        <input type="date" id="dob-input" name="animal-birthdate" placeholder="Date of Birth" required>
+                        <input type="submit" id="popup-submit" value="Add Animal">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

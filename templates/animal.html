@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Animal
+{% endblock %}
+
+{% block content %}
+    <div class="main-container">
+        <div class="container" id="section-left">
+            <div id="summary-container">
+                <div id="summary-image">
+                    <img width="200" height="200" id="animal-page-img" src="{{ url_for('static', filename=animal.img_url) }}" alt="Animal Image" >
+                    <input type="file" id="animal-img-input" accept="image/*" style="display: none;">
+                </div>
+                <div class="container" id="summary-info">
+                    <h1 id="animal-header">{{ animal.name }}</h1>
+                    <span>
+                        <p id="animal-breed">{{ animal.breed }}</p>
+                        <p id="animal-species">{{ animal.species }}</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="info-container">
+                <div id="info-header">
+                    <h2>Information</h2>
+                    <button id="edit-info-btn" onclick="showInfoForm('{{ animal.id }}')" class="material-symbols-outlined">edit</button>
+                </div>
+
+                <div id="info-section">
+                    <div class="row" id="info-section-row-1">
+                        <span>
+                            <label for="animal-dob">Date of Birth</label>
+                            <p id="animal-dob">{{ animal.dob }}</p>
+                            <input type="date" id="animal-dob-input" value="{{ animal.dob }}">
+                        </span>
+                        <div class="vertical-separator"></div>
+                        <span>
+                            <label for="animal-group">Group</label>
+                            <p id="animal-group">{{ animal.group }}</p>
+                        </span>
+                    </div>
+                    <div class="row" id="info-section-row-2">
+                        <span id="description-box">
+                            <label for="animal-description">Description</label>
+                            <p id="animal-description">{{ animal.description }}</p>
+                            <textarea name="animal-description" id="animal-description-input" rows="5">{{ animal.description }}</textarea>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="section-right">
+            <div id="notes-header">
+                <h2>Notes</h2>
+                <button onclick="showNoteForm()" class="material-symbols-outlined">add</button>
+            </div>
+
+            <div id="notes-container">
+                {% for note in notes %}
+                    <div class="note" id="{{note.id}}">
+                        <div class="note-content">
+                            <h6 class="note-text">{% markdown %}{{ note.note }}{% endmarkdown %}</h6>
+                        </div>
+                        <div class="note-header">
+                            <button onclick="deleteNote('{{ note.id }}')" id="delete-note-btn" class="material-symbols-outlined">delete</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="overlay" id="note-popup-container">
+            <div class="popup-form" id="add-note-form">
+                <div class="popup-form-header">
+                    <h2>New Note</h2>
+                    <button onclick="hideNoteForm()" class="material-symbols-outlined">close</button>
+                </div>
+
+                <div class="popup-form-content" id="note-popup-content">
+                    <form action="/animals/{{ animal.id }}/notes/add" method="post">
+                        <textarea name="note" id="note-input" rows="15" placeholder="New note"></textarea>
+                        <input type="submit" id="note-popup-submit" value="Add Note">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -8,6 +8,7 @@ flask = "*"
 colorama = "*"
 peewee = "*"
 jinja-markdown = "*"
+pillow = "*"
 
 [dev-packages]
 

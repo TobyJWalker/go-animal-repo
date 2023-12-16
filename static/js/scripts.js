@@ -172,7 +172,7 @@ async function saveInfo(animal_id) {
 
     setTimeout(function() {
         location.reload();
-    }, 1000);
+    }, 500);
 }
 
 function deleteNote(note_id) {

@@ -101,7 +101,7 @@ def add_note(animal_id):
 
     return redirect(url_for('animal', animal_id=animal_id))
 
-@app.route('/notes/delete/<int:note_id>', methods=['DELETE'])
+@app.route('/notes/delete/<int:note_id>', methods=['GET'])
 def delete_note(note_id):
     # get the note from the database
     note = Notes.get(Notes.id == note_id)

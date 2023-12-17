@@ -92,7 +92,7 @@ body{
 }
 
 .popup-form-content input::placeholder{
-    color: lightgray;
+    color: gray;
 }
 
 .popup-form-content input:hover{
@@ -101,6 +101,10 @@ body{
 
 .popup-form-content input:focus{
     background: rgb(0, 139, 139);
+}
+
+#dob-input{
+    color: gray;
 }
 
 #popup-submit{

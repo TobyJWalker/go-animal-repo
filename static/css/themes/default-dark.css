@@ -186,6 +186,7 @@ body{
 
 .editable-text{
     background: rgb(228, 239, 254);
+    color: black;
     border-radius: 5px;
 }
 

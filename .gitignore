@@ -27,4 +27,4 @@ go.work
 static/images/animals/*
 
 # config file
-data/config.json
+data/*

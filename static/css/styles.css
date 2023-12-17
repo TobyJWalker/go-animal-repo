@@ -303,6 +303,7 @@ body.menu-open .navbar{
     outline: none;
     padding: 0 5px;
     transition: background 0.3s;
+    font-size: 2vh;
 
     &:hover{
         background: rgba(161, 127, 193, 0.5);

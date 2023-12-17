@@ -196,3 +196,26 @@ body{
 #info-section-row-2 span p{
     text-decoration-color: darkcyan;
 }
+
+.theme-list{
+    background: rgb(61, 65, 80);
+    color: lightgray;
+}
+
+.theme-list button{
+    border-color: rgb(38, 40, 49);
+    color: lightgray;
+}
+
+.theme-list button:hover{
+    background: rgb(50, 53, 64);
+}
+
+.theme-list button:active{
+    background: rgb(61, 65, 80);
+    color: white;
+}
+
+.active-theme{
+    background: darkcyan;
+}

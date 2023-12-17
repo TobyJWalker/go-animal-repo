@@ -325,7 +325,7 @@ body.menu-open .navbar{
     display: flex;
     flex-direction: row column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 100%;
     height: 100vh;
     z-index: 1;

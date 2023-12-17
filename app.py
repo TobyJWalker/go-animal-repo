@@ -5,7 +5,6 @@ import os, signal
 from jinja_markdown import MarkdownExtension
 import json
 from PIL import Image
-import base64
 from threading import Thread
 
 # create flask app and db tables

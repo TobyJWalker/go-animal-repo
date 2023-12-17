@@ -1,0 +1,198 @@
+body{
+    background: rgb(38, 40, 49);
+}
+
+.navbar{
+    background:rgb(36, 36, 40);
+}
+
+.menu-button{
+    color: lightgray;
+}
+
+.menu-button:hover{
+    color: white;
+}
+
+.logo h2{
+    color: lightgray;
+}
+
+#sidebar{
+    background: rgb(50, 55, 55);
+}
+
+.sidebar-content button{
+    border-color: rgb(88, 88, 88);
+    color: lightgray;
+}
+
+.sidebar-content button:hover{
+    background: rgb(88, 88, 88);
+}
+
+.sidebar-content button:active{
+    background: rgb(50, 50, 50);
+    color: white;
+}
+
+.sidebar-filler{
+    border-color: rgb(88, 88, 88);
+}
+
+.header h1{
+    color: lightgray;
+}
+
+#new-animal{
+    background: rgb(0, 139, 139);
+    color: black;
+}
+
+#new-animal:hover{
+    background: rgb(0, 180, 180);
+}
+
+#new-animal:active{
+    background: rgb(0, 139, 139);
+    color: white;
+}
+
+.animal-card{
+    background: rgb(0, 139, 139);
+}
+
+.animal-card a{
+    color: black;
+}
+
+.popup-form{
+    background: rgb(38, 40, 49);
+}
+
+.popup-form-header{
+    background: rgb(30, 30, 33);
+}
+
+.popup-form-header h2{
+    color: lightgray;
+}
+
+.popup-form-header button{
+    color: lightgray;
+}
+
+.popup-form-content form label{
+    color: lightgray;
+}
+
+.popup-form-content input{
+    background: rgba(0, 139, 139, 0.3);
+    color: lightgray;
+}
+
+.popup-form-content input::placeholder{
+    color: lightgray;
+}
+
+.popup-form-content input:hover{
+    background: rgb(0, 139, 139);
+}
+
+.popup-form-content input:focus{
+    background: rgb(0, 139, 139);
+}
+
+#popup-submit{
+    background: rgb(0, 139, 139);
+    color: black;
+
+    &:hover{
+        background: rgb(0, 180, 180);
+    }
+
+    &:active{
+        background: rgb(0, 139, 139);
+        color: white;
+    }
+}
+
+#summary-container{
+    background: rgb(61, 65, 80);
+    color: lightgray;
+}
+
+#info-container{
+    background: rgb(61, 65, 80);
+    color: lightgray;
+}
+
+#info-header button{
+    color: darkcyan;
+}
+
+#notes-header button{
+    color: darkcyan;
+}
+
+#section-right{
+    border-color: rgb(61, 65, 80);
+}
+
+#add-note-form{
+    background: rgb(61, 65, 80);
+}
+
+#note-input{
+    background: rgb(97, 102, 126);
+}
+
+#note-popup-submit{
+    background: rgb(0, 139, 139);
+    color: black;
+
+    &:hover{
+        background: rgb(0, 180, 180);
+    }
+
+    &:active{
+        background: rgb(0, 139, 139);
+        color: white;
+    }
+}
+
+.note{
+    background: rgb(97, 102, 126);
+    color: white;
+}
+
+#notes-header{
+    background: rgb(61, 65, 80);
+    color: lightgray
+}
+
+#notes-container{
+    background: rgb(61, 65, 80);
+}
+
+#delete-note-btn{
+    color: red;
+}
+
+#info-section{
+    background: rgb(97, 102, 126);
+    color: white;
+}
+
+.editable-text{
+    background: rgb(228, 239, 254);
+    border-radius: 5px;
+}
+
+.vertical-separator{
+    background: lightgray;
+}
+
+#info-section-row-2 span p{
+    text-decoration-color: darkcyan;
+}

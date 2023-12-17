@@ -22,6 +22,22 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 if not os.path.exists('static/images/animals'):
     os.mkdir('static/images/animals')
 
+# make config file if it doesn't exist
+if not os.path.exists('data/config.json'):
+    with open('data/config.json', 'w') as file:
+        json.dump({'theme': 'css/themes/default-dark.css'}, file, indent=4)
+
+# load theme from config file
+THEME = ''
+
+def load_theme():
+    global THEME
+    with open('data/config.json', 'r') as file:
+        config = json.load(file)
+
+    THEME = config['theme']
+load_theme()
+
 @app.route('/')
 def index():
     # get all animals from the database
@@ -30,7 +46,7 @@ def index():
     # split into rows of 4
     animals = [animals[i:i+4] for i in range(0, len(animals), 4)]
 
-    return render_template('index.html', animals=animals)
+    return render_template('index.html', animals=animals, theme_file=THEME)
 
 @app.route('/quit')
 def quit():
@@ -44,7 +60,7 @@ def animal(animal_id):
     # get the notes for the animal
     notes = Notes.select().where(Notes.animal == animal)
 
-    return render_template('animal.html', animal=animal, notes=notes)
+    return render_template('animal.html', animal=animal, notes=notes, theme_file=THEME)
 
 @app.route('/animals/add', methods=['POST'])
 def add_animal():
@@ -132,6 +148,34 @@ def add_image(animal_id):
     animal.save()
 
     return redirect(url_for('animal', animal_id=animal_id))
+
+@app.route('/themes', methods=['GET'])
+def themes():
+    # get all the themes
+    themes = os.listdir('static/css/themes')
+
+    return render_template('themes.html', themes=themes, theme_file=THEME)
+
+@app.route('/themes', methods=['PATCH'])
+def change_theme():
+    # get the new theme
+    data = json.loads(request.data)
+    theme = data['theme']
+
+    global THEME
+    THEME = theme
+
+    # read config file
+    with open('data/config.json', 'r') as file:
+        config = json.load(file)
+        config['theme'] = theme
+    
+    # write config file
+    with open('data/config.json', 'w') as file:
+        json.dump(config, file, indent=4)
+
+    return '200'
+
 
 # check if an uploaded image is an actual image file
 def allowed_file(filename):

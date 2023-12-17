@@ -655,3 +655,31 @@ body.menu-open .navbar{
     height: 100%;
     font-size: 16px;
 }
+
+.themes-container{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    height: 80vh;
+    padding: 15px 0;
+}
+
+.theme-list{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    overflow: scroll;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.theme-list button{
+    width: 100%;
+    border-bottom: 1px solid;
+    font-size: 20px;
+}

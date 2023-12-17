@@ -6,7 +6,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename=theme_file) }}">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     <div id="sidebar">
         <div class="sidebar-content">
             <a href='/'><button>Animals</button></a>
-            <button>Themes</button>
+            <a href="/themes"><button>Themes</button></a>
             <div class="sidebar-filler"></div>
             <button>Backup Data</button>
             <button>Export Data</button>

@@ -188,3 +188,20 @@ function deleteNote(note_id) {
 function promptImageUpload() {
     document.getElementById("animal-img-input").click();
 }
+
+async function setTheme(theme) {
+    var theme_url = "/themes";
+    var theme_path = "css/themes/" + theme;
+
+    await fetch(theme_url, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            theme: theme_path
+        })
+    }).then(res => console.log(res));
+
+    location.reload();
+}

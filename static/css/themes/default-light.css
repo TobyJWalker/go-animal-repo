@@ -1,5 +1,5 @@
 body{
-    background: rgb(228, 239, 254);
+    background: rgb(228, 232, 254);
 }
 
 .navbar{
@@ -175,4 +175,27 @@ body{
 
 #info-section-row-2 span p{
     text-decoration-color: lightblue;
+}
+
+.theme-list{
+    background: rgba(220, 191, 248, 0.5);
+    color: black;
+}
+
+.theme-list button{
+    border-color: rgba(206, 179, 231, 0.5);
+    color: black;
+}
+
+.theme-list button:hover{
+    background: rgba(206, 179, 231, 0.7);
+}
+
+.theme-list button:active{
+    background: rgb(61, 65, 80);
+    color: white;
+}
+
+.active-theme{
+    background: rgb(157, 120, 209);
 }

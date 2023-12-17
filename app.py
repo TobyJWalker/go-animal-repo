@@ -144,6 +144,29 @@ def add_image(animal_id):
 
     return redirect(url_for('animal', animal_id=animal_id))
 
+@app.route('/themes', methods=['GET'])
+def themes():
+    # get all the themes
+    themes = os.listdir('static/css/themes')
+
+    return render_template('themes.html', themes=themes, theme_file=THEME)
+
+@app.route('/themes', methods=['PATCH'])
+def change_theme():
+    # get the new theme
+    data = json.loads(request.data)
+    theme = data['theme']
+
+    global THEME
+    THEME = theme
+
+    # update config file
+    with open('data/config.json', 'r+') as file:
+        config = json.load(file)
+        config['theme'] = theme
+        file.write(json.dumps(config, indent=4))
+
+
 # check if an uploaded image is an actual image file
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS

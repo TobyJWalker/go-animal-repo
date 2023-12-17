@@ -28,3 +28,6 @@ static/images/animals/*
 
 # config file
 data/*
+
+# cache files
+*.pyc

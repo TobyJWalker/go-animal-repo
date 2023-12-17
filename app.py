@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request
 from lib.models import *
 from werkzeug.utils import secure_filename
-import os, signal
+import os
 from jinja_markdown import MarkdownExtension
 import json
 from PIL import Image

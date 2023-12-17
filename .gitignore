@@ -25,3 +25,6 @@ go.work
 
 # uploaded animal images
 static/images/animals/*
+
+# config file
+data/config.json

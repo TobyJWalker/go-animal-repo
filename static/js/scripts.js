@@ -75,9 +75,10 @@ function showInfoForm(animal_id){
     var animal_description_input = document.getElementById("animal-description-input");
     animal_description_val = animal_description_text.textContent;
 
-    var animal_img_box = document.getElementById("animal-page-img");
+    var animal_img_box = document.getElementById("animal-img-overlay");
     animal_img_box.onclick = promptImageUpload;
     animal_img_box.style.cursor = "pointer";
+    animal_img_box.style.display = "flex";
 
     animal_name_box.setAttribute("contenteditable", "true");
     animal_name_box.classList.add("editable-text")

@@ -10,6 +10,9 @@
             <div id="summary-container">
                 <div id="summary-image">
                     <img width="200" height="200" id="animal-page-img" src="{{ url_for('static', filename=animal.img_url) }}" alt="Animal Image" >
+                    <div id="animal-img-overlay">
+                        <h2 class="material-symbols-outlined" id="animal-img-overlay-text">edit</h2>
+                    </div>
                     <input type="file" id="animal-img-input" accept="image/*" style="display: none;">
                 </div>
                 <div class="container" id="summary-info">

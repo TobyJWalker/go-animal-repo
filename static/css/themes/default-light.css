@@ -106,6 +106,10 @@ body{
     background: white;
 }
 
+#animal-img-overlay h2{
+    color: rgb(136, 83, 192);
+}
+
 #info-container{
     background: rgba(220, 191, 248, 0.5);
 }

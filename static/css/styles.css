@@ -398,6 +398,7 @@ body.menu-open .navbar{
 
 #summary-image{
     display: inherit;
+    position: relative;
     border-radius: 50%;
     width: 30%;
     height: 100%;
@@ -405,8 +406,33 @@ body.menu-open .navbar{
     justify-content: center;
 }
 
+#animal-img-overlay{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    float:left;
+    width: 90%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1/1;
+    z-index: 2;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#animal-img-overlay h2{
+    font-size: 5vh;
+}
+
 #animal-page-img{
     width: 90%;
+    z-index: 1;
     height: auto;
     border-radius: 50%;
     object-fit: cover;

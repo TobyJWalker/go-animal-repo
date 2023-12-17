@@ -22,6 +22,11 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 if not os.path.exists('static/images/animals'):
     os.mkdir('static/images/animals')
 
+# make config file if it doesn't exist
+if not os.path.exists('data/config.json'):
+    with open('data/config.json', 'w') as file:
+        json.dump({'theme': 'css/themes/default-dark.css'}, file, indent=4)
+
 # load theme from config file
 THEME = ''
 

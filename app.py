@@ -160,11 +160,16 @@ def change_theme():
     global THEME
     THEME = theme
 
-    # update config file
-    with open('data/config.json', 'r+') as file:
+    # read config file
+    with open('data/config.json', 'r') as file:
         config = json.load(file)
         config['theme'] = theme
-        file.write(json.dumps(config, indent=4))
+    
+    # write config file
+    with open('data/config.json', 'w') as file:
+        json.dump(config, file, indent=4)
+
+    return '200'
 
 
 # check if an uploaded image is an actual image file

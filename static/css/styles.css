@@ -267,6 +267,7 @@ body.menu-open .navbar{
     margin: 0 0 0 40px;
     padding: 0;
     background: transparent;
+    font-size: 3vh;
     font-weight: 500;
     width: 100%;
     text-align: center;

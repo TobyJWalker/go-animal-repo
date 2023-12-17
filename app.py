@@ -22,6 +22,17 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 if not os.path.exists('static/images/animals'):
     os.mkdir('static/images/animals')
 
+# load theme from config file
+THEME = ''
+
+def load_theme():
+    global THEME
+    with open('data/config.json', 'r') as file:
+        config = json.load(file)
+
+    THEME = config['theme']
+load_theme()
+
 @app.route('/')
 def index():
     # get all animals from the database
@@ -30,7 +41,7 @@ def index():
     # split into rows of 4
     animals = [animals[i:i+4] for i in range(0, len(animals), 4)]
 
-    return render_template('index.html', animals=animals)
+    return render_template('index.html', animals=animals, theme_file=THEME)
 
 @app.route('/quit')
 def quit():
@@ -44,7 +55,7 @@ def animal(animal_id):
     # get the notes for the animal
     notes = Notes.select().where(Notes.animal == animal)
 
-    return render_template('animal.html', animal=animal, notes=notes)
+    return render_template('animal.html', animal=animal, notes=notes, theme_file=THEME)
 
 @app.route('/animals/add', methods=['POST'])
 def add_animal():

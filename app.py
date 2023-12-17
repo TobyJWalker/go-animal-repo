@@ -38,6 +38,8 @@ def load_theme():
     THEME = config['theme']
 load_theme()
 
+######### ROUTES #########
+
 @app.route('/')
 def index():
     # get all animals from the database
@@ -176,6 +178,7 @@ def change_theme():
 
     return '200'
 
+######### END ROUTES #########
 
 # check if an uploaded image is an actual image file
 def allowed_file(filename):

@@ -3,7 +3,10 @@ var animal_breed_val = animal_breed_box.textContent;
 var animal_species_val = animal_species_box.textContent;
 var animal_dob_val = animal_dob_text.textContent;
 var animal_group_val = animal_group_box.textContent;
-var animal_description_val = animal_description_text.textContent;
+var animal_colour_val = animal_colour_box.textContent;
+var animal_personality_val = animal_personality_box.textContent;
+var animal_height_val = animal_height_box.textContent;
+var animal_weight_val = animal_weight_box.textContent;
 
 var sidebar_open = false;
 function toggleSidebar() {
@@ -71,9 +74,17 @@ function showInfoForm(animal_id){
     var animal_group_box = document.getElementById("animal-group");
     animal_group_val = animal_group_box.textContent;
 
-    var animal_description_text = document.getElementById("animal-description");
-    var animal_description_input = document.getElementById("animal-description-input");
-    animal_description_val = animal_description_text.textContent;
+    var animal_colour_box = document.getElementById("animal-colour");
+    animal_colour_val = animal_colour_box.textContent;
+
+    var animal_personality_box = document.getElementById("animal-personality");
+    animal_personality_val = animal_personality_box.textContent;
+
+    var animal_height_box = document.getElementById("animal-height");
+    animal_height_val = animal_height_box.textContent;
+
+    var animal_weight_box = document.getElementById("animal-weight");
+    animal_weight_val = animal_weight_box.textContent;
 
     var animal_img_box = document.getElementById("animal-img-overlay");
     animal_img_box.onclick = promptImageUpload;
@@ -96,9 +107,17 @@ function showInfoForm(animal_id){
     animal_group_box.setAttribute("contenteditable", "true");
     animal_group_box.classList.add("editable-text")
 
-    animal_description_text.style.display = "none";
-    animal_description_input.style.display = "block";
-    animal_description_input.classList.add("editable-text")
+    animal_colour_box.setAttribute("contenteditable", "true");
+    animal_colour_box.classList.add("editable-text")
+
+    animal_personality_box.setAttribute("contenteditable", "true");
+    animal_personality_box.classList.add("editable-text")
+
+    animal_height_box.setAttribute("contenteditable", "true");
+    animal_height_box.classList.add("editable-text")
+
+    animal_weight_box.setAttribute("contenteditable", "true");
+    animal_weight_box.classList.add("editable-text")
 }
 
 async function saveInfo(animal_id) {
@@ -117,8 +136,17 @@ async function saveInfo(animal_id) {
     var animal_group_box = document.getElementById("animal-group");
     var new_group = animal_group_box.textContent;
 
-    var animal_description_input = document.getElementById("animal-description-input");
-    var new_description = animal_description_input.value;
+    var animal_colour_box = document.getElementById("animal-colour");
+    var new_colour = animal_colour_box.textContent;
+
+    var animal_personality_box = document.getElementById("animal-personality");
+    var new_personality = animal_personality_box.textContent;
+
+    var animal_height_box = document.getElementById("animal-height");
+    var new_height = animal_height_box.textContent;
+
+    var animal_weight_box = document.getElementById("animal-weight");
+    var new_weight = animal_weight_box.textContent;
 
     var animal_img_input = document.getElementById("animal-img-input");
 
@@ -137,8 +165,17 @@ async function saveInfo(animal_id) {
     if (new_group == "") {
         new_group = "n/a";
     }
-    if (new_description == "") {
-        new_description = "Nothing here yet...";
+    if (new_colour == "") {
+        new_colour = "n/a";
+    }
+    if (new_personality == "") {
+        new_personality = "n/a";
+    }
+    if (new_height == "") {
+        new_height = "n/a";
+    }
+    if (new_weight == "") {
+        new_weight = "n/a";
     }
 
     var url = "/animals/" + animal_id + "/edit";
@@ -154,7 +191,10 @@ async function saveInfo(animal_id) {
             species: new_species,
             dob: new_dob,
             group: new_group,
-            description: new_description,
+            colour: new_colour,
+            personality: new_personality,
+            height: new_height,
+            weight: new_weight
         })
     }).then(res => console.log(res));
 

@@ -90,7 +90,10 @@ def edit_animal(animal_id):
     animal.dob = data['dob']
     animal.species = data['species']
     animal.group = data['group']
-    animal.description = data['description']
+    animal.colour = data['colour']
+    animal.height = data['height']
+    animal.weight = data['weight']
+    animal.personality = data['personality']
     animal.save()
 
     return '200'

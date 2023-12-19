@@ -13,7 +13,10 @@ class Animal(peewee.Model):
     species = peewee.CharField(default='n/a')
     dob = peewee.DateField()
     group = peewee.CharField(default='n/a')
-    description = peewee.TextField(default='Nothing is added here yet...')
+    height = peewee.CharField(default='n/a')
+    weight = peewee.CharField(default='n/a')
+    colour = peewee.CharField(default='n/a')
+    personality = peewee.CharField(default='n/a')
     img_url = peewee.CharField(default='images/placeholder.jpeg')
 
 

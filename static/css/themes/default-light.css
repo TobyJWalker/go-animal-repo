@@ -177,10 +177,6 @@ body{
     background: lightgray;
 }
 
-#info-section-row-2 span p{
-    text-decoration-color: lightblue;
-}
-
 .theme-list{
     background: rgba(220, 191, 248, 0.5);
     color: black;

@@ -202,10 +202,6 @@ body{
     background: lightgray;
 }
 
-#info-section-row-2 span p{
-    text-decoration-color: darkcyan;
-}
-
 .theme-list{
     background: rgb(61, 65, 80);
     color: lightgray;

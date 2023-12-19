@@ -16,10 +16,10 @@
                     <input type="file" id="animal-img-input" accept="image/*" style="display: none;">
                 </div>
                 <div class="container" id="summary-info">
-                    <h1 id="animal-header">{{ animal.name }}</h1>
+                    <h1 id="animal-header" spellcheck="false">{{ animal.name }}</h1>
                     <span>
-                        <p id="animal-breed">{{ animal.breed }}</p>
-                        <p id="animal-species">{{ animal.species }}</p>
+                        <p id="animal-breed" spellcheck="false">{{ animal.breed }}</p>
+                        <p id="animal-species" spellcheck="false">{{ animal.species }}</p>
                     </span>
                 </div>
             </div>
@@ -40,14 +40,14 @@
                         <div class="vertical-separator"></div>
                         <span>
                             <label for="animal-group">Group</label>
-                            <p id="animal-group">{{ animal.group }}</p>
+                            <p id="animal-group" spellcheck="false">{{ animal.group }}</p>
                         </span>
                     </div>
                     <div class="row" id="info-section-row-2">
                         <span id="description-box">
                             <label for="animal-description">Description</label>
-                            <p id="animal-description">{{ animal.description }}</p>
-                            <textarea name="animal-description" id="animal-description-input" rows="5">{{ animal.description }}</textarea>
+                            <p id="animal-description" spellcheck="false">{{ animal.description }}</p>
+                            <textarea name="animal-description" id="animal-description-input" rows="5" spellcheck="false">{{ animal.description }}</textarea>
                         </span>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                 {% for note in notes %}
                     <div class="note" id="{{note.id}}">
                         <div class="note-content">
-                            <h6 class="note-text">{% markdown %}{{ note.note }}{% endmarkdown %}</h6>
+                            <h6 class="note-text" spellcheck="false">{% markdown %}{{ note.note }}{% endmarkdown %}</h6>
                         </div>
                         <div class="note-header">
                             <button onclick="deleteNote('{{ note.id }}')" id="delete-note-btn" class="material-symbols-outlined">delete</button>
@@ -83,7 +83,7 @@
 
                 <div class="popup-form-content" id="note-popup-content">
                     <form action="/animals/{{ animal.id }}/notes/add" method="post">
-                        <textarea name="note" id="note-input" rows="15" placeholder="New note"></textarea>
+                        <textarea name="note" id="note-input" rows="15" placeholder="New note" spellcheck="false"></textarea>
                         <input type="submit" id="note-popup-submit" value="Add Note">
                     </form>
                 </div>

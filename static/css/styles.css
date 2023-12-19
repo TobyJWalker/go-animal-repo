@@ -190,7 +190,7 @@ body.menu-open .navbar{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 15%;
     height: auto;
-    margin: 0 1.5% 3rem;
+    margin: 0 2.5% 3rem;
     transition: 0.3s;
 }
 
@@ -200,7 +200,7 @@ body.menu-open .navbar{
 
 .animal-card:hover{
     width: 16%;
-    margin: 0 1%;
+    margin: 0 2%;
 }
 
 .animal-card-image img{

@@ -46,7 +46,7 @@ def index():
     animals = Animal.select()
 
     # split into rows of 4
-    animals = [animals[i:i+4] for i in range(0, len(animals), 4)]
+    animals = [animals[i:i+5] for i in range(0, len(animals), 5)]
 
     return render_template('index.html', animals=animals, theme_file=THEME)
 
